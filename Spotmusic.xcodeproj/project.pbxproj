@@ -15,6 +15,8 @@
 		1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */; };
 		1BDAF28A267D08F300B8D16E /* LibraryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF289267D08F300B8D16E /* LibraryTab.storyboard */; };
 		1BDAF28C267D0E2000B8D16E /* FavoritesTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */; };
+		1BDAF28F267D13BE00B8D16E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF28D267D13BD00B8D16E /* data.json */; };
+		1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF28E267D13BE00B8D16E /* MusicService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1BDAF283267D038600B8D16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BDAF289267D08F300B8D16E /* LibraryTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LibraryTab.storyboard; sourceTree = "<group>"; };
 		1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesTab.storyboard; sourceTree = "<group>"; };
+		1BDAF28D267D13BD00B8D16E /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		1BDAF28E267D13BE00B8D16E /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				1BDAF27E267D038600B8D16E /* Assets.xcassets */,
 				1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */,
 				1BDAF283267D038600B8D16E /* Info.plist */,
+				1BDAF28D267D13BD00B8D16E /* data.json */,
+				1BDAF28E267D13BE00B8D16E /* MusicService.swift */,
 				1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */,
 			);
 			path = Spotmusic;
@@ -131,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDAF28A267D08F300B8D16E /* LibraryTab.storyboard in Resources */,
+				1BDAF28F267D13BE00B8D16E /* data.json in Resources */,
 				1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */,
 				1BDAF27F267D038600B8D16E /* Assets.xcassets in Resources */,
 				1BDAF27D267D038300B8D16E /* Main.storyboard in Resources */,
@@ -148,6 +155,7 @@
 				1BDAF27A267D038300B8D16E /* ViewController.swift in Sources */,
 				1BDAF276267D038300B8D16E /* AppDelegate.swift in Sources */,
 				1BDAF278267D038300B8D16E /* SceneDelegate.swift in Sources */,
+				1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
