@@ -13,6 +13,8 @@
 		1BDAF27D267D038300B8D16E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF27B267D038300B8D16E /* Main.storyboard */; };
 		1BDAF27F267D038600B8D16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF27E267D038600B8D16E /* Assets.xcassets */; };
 		1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */; };
+		1BDAF28A267D08F300B8D16E /* LibraryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF289267D08F300B8D16E /* LibraryTab.storyboard */; };
+		1BDAF28C267D0E2000B8D16E /* FavoritesTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1BDAF27E267D038600B8D16E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BDAF281267D038600B8D16E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BDAF283267D038600B8D16E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDAF289267D08F300B8D16E /* LibraryTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LibraryTab.storyboard; sourceTree = "<group>"; };
+		1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesTab.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +64,11 @@
 				1BDAF277267D038300B8D16E /* SceneDelegate.swift */,
 				1BDAF279267D038300B8D16E /* ViewController.swift */,
 				1BDAF27B267D038300B8D16E /* Main.storyboard */,
+				1BDAF289267D08F300B8D16E /* LibraryTab.storyboard */,
 				1BDAF27E267D038600B8D16E /* Assets.xcassets */,
 				1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */,
 				1BDAF283267D038600B8D16E /* Info.plist */,
+				1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */,
 			);
 			path = Spotmusic;
 			sourceTree = "<group>";
@@ -124,9 +130,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BDAF28A267D08F300B8D16E /* LibraryTab.storyboard in Resources */,
 				1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */,
 				1BDAF27F267D038600B8D16E /* Assets.xcassets in Resources */,
 				1BDAF27D267D038300B8D16E /* Main.storyboard in Resources */,
+				1BDAF28C267D0E2000B8D16E /* FavoritesTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
