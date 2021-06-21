@@ -70,6 +70,7 @@
 		1BDAF274267D038300B8D16E /* Spotmusic */ = {
 			isa = PBXGroup;
 			children = (
+				1BDAF299268116A600B8D16E /* CustomCells */,
 				1BDAF275267D038300B8D16E /* AppDelegate.swift */,
 				1BDAF277267D038300B8D16E /* SceneDelegate.swift */,
 				1BDAF279267D038300B8D16E /* ViewController.swift */,
@@ -82,10 +83,17 @@
 				1BDAF28E267D13BE00B8D16E /* MusicService.swift */,
 				1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */,
 				1BDAF291267D247500B8D16E /* LibraryListViewController.swift */,
-				1BDAF295267D538700B8D16E /* AlbumWithImageCell.swift */,
 				1BDAF297267D5BFA00B8D16E /* AlbumSongsUIViewController.swift */,
 			);
 			path = Spotmusic;
+			sourceTree = "<group>";
+		};
+		1BDAF299268116A600B8D16E /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				1BDAF295267D538700B8D16E /* AlbumWithImageCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

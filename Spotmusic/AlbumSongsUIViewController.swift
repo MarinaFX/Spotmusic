@@ -7,6 +7,9 @@
 
 import UIKit
 
+//first cell id AlbumPresentation
+//second cell id insideAlbumSongsCell
+
 class AlbumSongsUIViewController: UIViewController {
     
     /*

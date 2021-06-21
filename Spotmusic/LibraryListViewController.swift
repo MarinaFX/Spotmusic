@@ -18,12 +18,12 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         albumPlaylistCollection = musicService?.loadLibrary() ?? []
         tableView.dataSource = self
         tableView.delegate = self
     }
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albumPlaylistCollection.count
     }
@@ -32,11 +32,11 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let album = albumPlaylistCollection[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "song-album-detail", for: indexPath) as! AlbumWithImageCell
-
+        
         cell.imageCover.image = musicService?.getCoverImage(forItemIded: album.id)
         cell.albumNameLabel.text = album.title
         cell.albumTypeLabel.text = "\(album.type) · \(album.mainPerson)"
-
+        
         return cell
     }
     
