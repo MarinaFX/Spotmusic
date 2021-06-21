@@ -48,7 +48,9 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
         if segue.identifier == "toAlbumSongs", let indexPath = sender as? IndexPath {
             let destination = segue.destination as? AlbumSongsUIViewController
             
-            
+            let album = albumPlaylistCollection[indexPath.row]
+            destination?.album = album
+            destination?.getMusicService(service: musicService!)
         }
     }
 }

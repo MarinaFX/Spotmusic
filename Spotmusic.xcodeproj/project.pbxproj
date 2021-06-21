@@ -20,6 +20,8 @@
 		1BDAF292267D247500B8D16E /* LibraryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF291267D247500B8D16E /* LibraryListViewController.swift */; };
 		1BDAF296267D538700B8D16E /* AlbumWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF295267D538700B8D16E /* AlbumWithImageCell.swift */; };
 		1BDAF298267D5BFA00B8D16E /* AlbumSongsUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF297267D5BFA00B8D16E /* AlbumSongsUIViewController.swift */; };
+		1BDAF29B268135B000B8D16E /* AlbumPresentationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF29A268135B000B8D16E /* AlbumPresentationCell.swift */; };
+		1BDAF29D268136A800B8D16E /* SongFromAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF29C268136A800B8D16E /* SongFromAlbumCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		1BDAF291267D247500B8D16E /* LibraryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryListViewController.swift; sourceTree = "<group>"; };
 		1BDAF295267D538700B8D16E /* AlbumWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumWithImageCell.swift; sourceTree = "<group>"; };
 		1BDAF297267D5BFA00B8D16E /* AlbumSongsUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSongsUIViewController.swift; sourceTree = "<group>"; };
+		1BDAF29A268135B000B8D16E /* AlbumPresentationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPresentationCell.swift; sourceTree = "<group>"; };
+		1BDAF29C268136A800B8D16E /* SongFromAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFromAlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				1BDAF295267D538700B8D16E /* AlbumWithImageCell.swift */,
+				1BDAF29A268135B000B8D16E /* AlbumPresentationCell.swift */,
+				1BDAF29C268136A800B8D16E /* SongFromAlbumCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -170,8 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BDAF292267D247500B8D16E /* LibraryListViewController.swift in Sources */,
+				1BDAF29D268136A800B8D16E /* SongFromAlbumCell.swift in Sources */,
 				1BDAF27A267D038300B8D16E /* ViewController.swift in Sources */,
 				1BDAF276267D038300B8D16E /* AppDelegate.swift in Sources */,
+				1BDAF29B268135B000B8D16E /* AlbumPresentationCell.swift in Sources */,
 				1BDAF298267D5BFA00B8D16E /* AlbumSongsUIViewController.swift in Sources */,
 				1BDAF278267D038300B8D16E /* SceneDelegate.swift in Sources */,
 				1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */,
