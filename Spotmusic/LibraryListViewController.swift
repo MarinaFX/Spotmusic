@@ -14,25 +14,41 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     private var musicService: MusicService? = try? MusicService()
-    private var albums: [MusicCollection] = []
-    
+    private var albumPlaylistCollection: [MusicCollection] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        albums = musicService?.loadLibrary() ?? []
+        albumPlaylistCollection = musicService?.loadLibrary() ?? []
         tableView.dataSource = self
         tableView.delegate = self
     }
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albums.count
+        return albumPlaylistCollection.count
     }
     
     // MARK: Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "song-album-detail", for: indexPath)
-        
+        let album = albumPlaylistCollection[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "song-album-detail", for: indexPath) as! AlbumWithImageCell
+
+        cell.imageCover.image = musicService?.getCoverImage(forItemIded: album.id)
+        cell.albumNameLabel.text = album.title
+        cell.albumTypeLabel.text = "\(album.type) · \(album.mainPerson)"
+
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toAlbumSongs", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAlbumSongs", let indexPath = sender as? IndexPath {
+            let destination = segue.destination as? AlbumSongsUIViewController
+            
+            
+        }
     }
 }
