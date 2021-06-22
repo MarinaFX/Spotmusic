@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="106.47321428571428"/>
         </scene>
-        <!--PlayingView-->
+        <!--Playing-->
         <scene sceneID="XM0-lv-mrC">
             <objects>
-                <viewControllerPlaceholder storyboardName="Playing" referencedIdentifier="PlayingView" id="Zcs-eo-kZK" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Playing" id="Zcs-eo-kZK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zz-js-Dlc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2817" y="105"/>

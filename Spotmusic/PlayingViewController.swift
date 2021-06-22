@@ -9,21 +9,29 @@ import UIKit
 
 class PlayingViewController: UIViewController {
     
-    
-    @IBOutlet weak var viewLabel: UILabel!
+    private var musicService: MusicService? = try? MusicService()
+ 
+    @IBOutlet weak var playingCoverImage: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var artistLabel: UILabel!
+    
+
     
     var playingNow: Music?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+     
+        
         titleLabel.text = playingNow?.title
+        playingCoverImage.image = musicService?.getCoverImage(forItemIded: playingNow?.id ?? "")
         
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.green
         
         
     }
@@ -34,3 +42,4 @@ class PlayingViewController: UIViewController {
     
 
 }
+
