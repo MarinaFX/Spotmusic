@@ -14,6 +14,7 @@ class FavoritesListCell: UITableViewCell {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var isFavoriteImage: UIImageView!
     
+           
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

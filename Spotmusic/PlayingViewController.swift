@@ -10,7 +10,10 @@ import UIKit
 class PlayingViewController: UIViewController {
     
     
+    @IBOutlet weak var viewLabel: UILabel!
+    
     @IBOutlet weak var titleLabel: UILabel!
+    
     var playingNow: Music?
     
     override func viewDidLoad() {
@@ -18,6 +21,15 @@ class PlayingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         titleLabel.text = playingNow?.title
+        
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        
+        
+    }
+    
+    @objc func addTapped(){
+        print("tapped")
     }
     
 
