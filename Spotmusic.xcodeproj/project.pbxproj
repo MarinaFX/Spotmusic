@@ -19,6 +19,8 @@
 		1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF28E267D13BE00B8D16E /* MusicService.swift */; };
 		B2DF6FF3267D299E00ADAEA5 /* Playing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */; };
 		B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */; };
+		B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */; };
+		B2DF6FF92681262800ADAEA5 /* FavoritesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		1BDAF28E267D13BE00B8D16E /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
 		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playing.storyboard; sourceTree = "<group>"; };
 		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */,
 				B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */,
 				B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */,
+				B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */,
+				B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */,
 			);
 			path = Spotmusic;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 				B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */,
 				1BDAF27A267D038300B8D16E /* ViewController.swift in Sources */,
 				1BDAF276267D038300B8D16E /* AppDelegate.swift in Sources */,
+				B2DF6FF92681262800ADAEA5 /* FavoritesListCell.swift in Sources */,
+				B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */,
 				1BDAF278267D038300B8D16E /* SceneDelegate.swift in Sources */,
 				1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */,
 			);

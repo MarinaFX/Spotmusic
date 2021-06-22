@@ -121,9 +121,9 @@ final class MusicService {
     
     func toggleFavorite(music: Music, isFavorite: Bool) {
         if isFavorite {
-            favoriteMusics.removeAll { $0 == music }
-        } else {
             favoriteMusics.append(music)
+        } else {
+            favoriteMusics.removeAll { $0 == music }
         }
         
         // update persisted list with IDs of favorite musics
