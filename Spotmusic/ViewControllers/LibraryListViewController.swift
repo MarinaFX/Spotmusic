@@ -41,16 +41,17 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "toAlbumSongs", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAlbumSongs", let indexPath = sender as? IndexPath {
-            let destination = segue.destination as? AlbumSongsUIViewController
+            let destination = segue.destination as! AlbumSongsUIViewController
             
             let album = albumPlaylistCollection[indexPath.row]
-            destination?.album = album
-            destination?.getMusicService(service: musicService!)
+            destination.album = album
+            destination.getMusicService(service: musicService!)
         }
     }
 }

@@ -10,22 +10,17 @@ import UIKit
 //first cell id AlbumPresentation
 //second cell id insideAlbumSongsCell
 
-// MARK: Questions
+//MARK: To-dos
 /*
-    -pq as contraints de titulo nao estao funcionando? Ao entrar em um album/playlist com nome grande o titulo da navegacao fica ... e na first cell sai da tela
+    Tuesday:
+    - make album description + detail screen
+    - finish remaining required screen
+    - Start extra features
     
-    -pq estou comendo a primeira cell? Ex: How to Be a Human Being tem 11 musicas e sao renderizadas apenas 10 celulas
- 
-    -pq ao fazer o scroll p baixo na tela do album, a navigationbar fica com uma mascara cinza?
  */
 
 class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
-    /*
-     depois que terminar a tela criar as 4 outlets (capa, artista, album e release date)
-     depois de criar os outlets, criar as variaveis bridge para armezenar os valores que os outlets irao receber
-     */
     
     private var musicService: MusicService?
     var album: MusicCollection?
@@ -38,8 +33,12 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationItem.title = album?.title ?? "Album name"
     }
     
+    // MARK: Question
+    //revisar se tem como desencapsular o album antes p n lidar com optional em todo lugar (olhar videos do rafa e renan primeiro)
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return album?.musics.count ?? 0
+        guard let unwrappedAlbum = album else { return 0 }
+        return unwrappedAlbum.musics.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,9 +62,9 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             
             guard let unwrappedAlbum = album else
             { fatalError() }
-            let song = unwrappedAlbum.musics[indexPath.row]
+            let song = unwrappedAlbum.musics[indexPath.row - 1]
             
-            cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.musics[indexPath.row].id)
+            cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.musics[indexPath.row - 1].id)
             cell.songNameLabel.text = song.title
             cell.artistLabel.text = song.artist
             
@@ -73,6 +72,11 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
 }
+
+//MARK: Question
+/*
+ Devo criar uma funcao para passar a mesma ref do MusicService adiante (devo manter um singleton) ou posso criar novas instancias?
+ */
 
 extension AlbumSongsUIViewController {
     
