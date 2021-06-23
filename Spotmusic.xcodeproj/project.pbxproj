@@ -25,6 +25,12 @@
 		1BDAF2A92683E9F400B8D16E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF275267D038300B8D16E /* AppDelegate.swift */; };
 		1BDAF2AA2683E9F400B8D16E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF277267D038300B8D16E /* SceneDelegate.swift */; };
 		1BDAF2AB2683E9F400B8D16E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDAF279267D038300B8D16E /* ViewController.swift */; };
+		B21B714D2683B9D900E6BF8C /* QueueList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21B714C2683B9D800E6BF8C /* QueueList.storyboard */; };
+		B21B714F2683B9EC00E6BF8C /* QueueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */; };
+		B2DF6FF3267D299E00ADAEA5 /* Playing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */; };
+		B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */; };
+		B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */; };
+		B2DF6FF92681262800ADAEA5 /* FavoritesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		1BDAF2A32682A9EF00B8D16E /* AboutAlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAlbumTableViewCell.swift; sourceTree = "<group>"; };
 		1BDAF2A52683CFA000B8D16E /* AboutArtistViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutArtistViewCell.swift; sourceTree = "<group>"; };
 		1BDAF2A72683E61200B8D16E /* FavoritesTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoritesTab.storyboard; sourceTree = "<group>"; };
+		B21B714C2683B9D800E6BF8C /* QueueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QueueList.storyboard; sourceTree = "<group>"; };
+		B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueListViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playing.storyboard; sourceTree = "<group>"; };
+		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,14 @@
 				1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */,
 				1BDAF283267D038600B8D16E /* Info.plist */,
 				1BDAF28D267D13BD00B8D16E /* data.json */,
+				B2DF6FFA2682592F00ADAEA5 /* MusicSerivce.swift */,
+				1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */,
+				B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */,
+				B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */,
+				B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */,
+				B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */,
+				B21B714C2683B9D800E6BF8C /* QueueList.storyboard */,
+				B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */,
 			);
 			path = Spotmusic;
 			sourceTree = "<group>";
@@ -192,10 +212,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DF6FF3267D299E00ADAEA5 /* Playing.storyboard in Resources */,
 				1BDAF28A267D08F300B8D16E /* LibraryTab.storyboard in Resources */,
 				1BDAF28F267D13BE00B8D16E /* data.json in Resources */,
 				1BDAF2A82683E61200B8D16E /* FavoritesTab.storyboard in Resources */,
 				1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */,
+				B21B714D2683B9D900E6BF8C /* QueueList.storyboard in Resources */,
 				1BDAF27F267D038600B8D16E /* Assets.xcassets in Resources */,
 				1BDAF27D267D038300B8D16E /* Main.storyboard in Resources */,
 			);
@@ -220,6 +242,13 @@
 				1BDAF298267D5BFA00B8D16E /* AlbumSongsUIViewController.swift in Sources */,
 				1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */,
 				1BDAF296267D538700B8D16E /* AlbumWithImageCell.swift in Sources */,
+				B21B714F2683B9EC00E6BF8C /* QueueListViewController.swift in Sources */,
+				B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */,
+				1BDAF27A267D038300B8D16E /* ViewController.swift in Sources */,
+				1BDAF276267D038300B8D16E /* AppDelegate.swift in Sources */,
+				B2DF6FF92681262800ADAEA5 /* FavoritesListCell.swift in Sources */,
+				B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */,
+				1BDAF278267D038300B8D16E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
