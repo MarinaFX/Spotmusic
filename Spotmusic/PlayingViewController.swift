@@ -25,9 +25,10 @@ class PlayingViewController: UIViewController {
         super.viewDidLoad()
 
      
+        playingCoverImage.image = musicService?.getCoverImage(forItemIded: playingNow?.id ?? "")
         
         titleLabel.text = playingNow?.title
-        playingCoverImage.image = musicService?.getCoverImage(forItemIded: playingNow?.id ?? "")
+        artistLabel.text = playingNow?.artist
         
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(addTapped))
