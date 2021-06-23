@@ -7,22 +7,17 @@
 
 import UIKit
 
-//first cell id AlbumPresentation
-//second cell id insideAlbumSongsCell
-
-//MARK: To-dos
-/*
-    Tuesday:
-    - make album description + detail screen
-    - finish remaining required screen
-    - Start extra features
-    
+/** Cell IDs
+ 1st Cell:  AlbumPresentation
+ 2nd Cell: insideAlbumSongsCell
  */
 
 class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: Variables and class setup
     @IBOutlet weak var tableView: UITableView!
     
-    private var musicService: MusicService?
+    var musicService: MusicService?
     var album: MusicCollection?
 
     override func viewDidLoad() {
@@ -33,8 +28,13 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationItem.title = album?.title ?? "Album name"
     }
     
-    // MARK: Question
-    //revisar se tem como desencapsular o album antes p n lidar com optional em todo lugar (olhar videos do rafa e renan primeiro)
+    //MARK: Outlet actions
+    
+    @IBAction func infoButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "toAlbumDetails", sender: nil)
+    }
+    
+    //MARK: DataSource delegation
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let unwrappedAlbum = album else { return 0 }
@@ -42,12 +42,13 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let unwrappedAlbum = album else
+        { fatalError() }
+        
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumPresentation", for: indexPath) as! AlbumPresentationCell
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             
-            guard let unwrappedAlbum = album else
-            { fatalError() }
             
             cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.id)
             cell.albumNameLabel.text = unwrappedAlbum.title
@@ -60,8 +61,7 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "insideAlbumSongsCell", for: indexPath) as! SongFromAlbumCell
             
-            guard let unwrappedAlbum = album else
-            { fatalError() }
+           
             let song = unwrappedAlbum.musics[indexPath.row - 1]
             
             cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.musics[indexPath.row - 1].id)
@@ -71,16 +71,23 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             return cell
         }
     }
-}
-
-//MARK: Question
-/*
- Devo criar uma funcao para passar a mesma ref do MusicService adiante (devo manter um singleton) ou posso criar novas instancias?
- */
-
-extension AlbumSongsUIViewController {
     
-    func getMusicService(service: MusicService) -> Void {
-        self.musicService = service
+    //MARK: Segues
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //performar segue para playing futuramente
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAlbumDetails" {
+            let rootDest = segue.destination as! UINavigationController
+            
+            let finalDest = rootDest.topViewController as! AlbumDetailsViewController
+            
+            finalDest.album = self.album
+            finalDest.musicService = musicService
+            
+        }
+    }
+    
 }

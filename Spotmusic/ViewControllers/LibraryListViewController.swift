@@ -13,8 +13,8 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var musicService: MusicService? = try? MusicService()
-    private var albumPlaylistCollection: [MusicCollection] = []
+    var musicService: MusicService? = try? MusicService()
+    var albumPlaylistCollection: [MusicCollection] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class LibraryListViewController: UIViewController, UITableViewDataSource, UITabl
             
             let album = albumPlaylistCollection[indexPath.row]
             destination.album = album
-            destination.getMusicService(service: musicService!)
+            destination.musicService = musicService
         }
     }
 }
