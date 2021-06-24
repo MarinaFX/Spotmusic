@@ -12,8 +12,7 @@ import UIKit
  2nd Cell: insideAlbumSongsCell
  */
 
-class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SongFromAlbumDelegate {
     //MARK: Variables and class setup
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,12 +48,19 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumPresentation", for: indexPath) as! AlbumPresentationCell
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             
+            let formater = DateFormatter()
+            formater.dateFormat = "MMM dd yyyy"
+            var formattedDate = formater.string(from: unwrappedAlbum.referenceDate)
+            let i = formattedDate.index(formattedDate.startIndex, offsetBy: 6)
+            formattedDate.insert(",", at: i)
+            formattedDate.insert("h", at: i)
+            formattedDate.insert("t", at: i)
             
             cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.id)
             cell.albumNameLabel.text = unwrappedAlbum.title
             cell.albumArtist.text = "\(unwrappedAlbum.type) by \(unwrappedAlbum.mainPerson)"
             cell.albumSongCount.text = "\(unwrappedAlbum.musics.count) songs "
-            cell.albumRelDate.text = "Released \(DateFormatter.localizedString(from: unwrappedAlbum.referenceDate, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.none))"
+            cell.albumRelDate.text = "Released \(formattedDate)"
             
             return cell
         }
@@ -64,12 +70,26 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
            
             let song = unwrappedAlbum.musics[indexPath.row - 1]
             
-            cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.musics[indexPath.row - 1].id)
+            cell.imageCover.image = musicService?.getCoverImage(forItemIded: song.id)
             cell.songNameLabel.text = song.title
             cell.artistLabel.text = song.artist
+            cell.delegate = self
+            cell.song = song
             
+            if isFavoriteSong(song: song) {
+                cell.isFavoriteLabel.image = UIImage(systemName: "heart.fill")
+                cell.isFavoriteLabel.tintColor = UIColor.red
+            }
+            else {
+                cell.isFavoriteLabel.image = UIImage(systemName: "heart")
+                cell.isFavoriteLabel.tintColor = UIColor.gray
+            }
             return cell
         }
+    }
+    
+    func isFavoriteSong(song: Music) -> Bool {
+        return musicService?.favoriteMusics.contains(song) ?? false
     }
     
     //MARK: Segues
@@ -87,6 +107,19 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             finalDest.album = self.album
             finalDest.musicService = musicService
             
+        }
+    }
+    
+    //MARK: Favorite Protocol
+    
+    func favoriteSong(song: Music) -> Bool {
+        if isFavoriteSong(song: song) {
+            musicService?.toggleFavorite(music: song, isFavorite: false)
+            return false
+        }
+        else {
+            musicService?.toggleFavorite(music: song, isFavorite: true)
+            return true
         }
     }
     

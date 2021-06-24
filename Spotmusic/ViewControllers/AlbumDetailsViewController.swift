@@ -34,6 +34,7 @@ class AlbumDetailsViewController: UIViewController, UITableViewDataSource, UITab
         
         //let totalSongsDuration = unwrappedAlbum.musics.compactMap { music -> TimeInterval in return music.length }
         //let albumDuration = totalSongsDuration.reduce(0, +)
+        //this lambda function was transformed into this:
         
         albumDuration = unwrappedAlbum.musics
             .compactMap { $0.length }
@@ -58,11 +59,24 @@ class AlbumDetailsViewController: UIViewController, UITableViewDataSource, UITab
             
             guard let unwrappedAlbum = album else { fatalError() }
             
+            let albumMin = String(format: "%.0f", (albumDuration!/60).truncatingRemainder(dividingBy: 60).rounded(FloatingPointRoundingRule.towardZero))
+            let albumSec = String(format: "%.0f", albumDuration!.truncatingRemainder(dividingBy: 60).rounded())
+            
+            let formater = DateFormatter()
+            formater.dateFormat = "MMM dd yyyy"
+            var formattedDate = formater.string(from: unwrappedAlbum.referenceDate)
+            let i = formattedDate.index(formattedDate.startIndex, offsetBy: 6)
+            formattedDate.insert(",", at: i)
+            formattedDate.insert("h", at: i)
+            formattedDate.insert("t", at: i)
+
+            
             cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.id)
             cell.albumNameLabel.text = unwrappedAlbum.title
             cell.albumArtistLabel.text = "\(unwrappedAlbum.type) by \(unwrappedAlbum.mainPerson)"
-            cell.countAndDurationLabel.text = "\(unwrappedAlbum.musics.count) songs, \((albumDuration?.rounded() ?? 0)/60)min \(albumDuration?.rounded() ?? 0)s"
-            cell.relDateLabel.text = "\(DateFormatter.localizedString(from: unwrappedAlbum.referenceDate, dateStyle: DateFormatter.Style.long, timeStyle: DateFormatter.Style.none))"
+            cell.countAndDurationLabel.text = "\(unwrappedAlbum.musics.count) songs, \(albumMin)min \(albumSec)s"
+            cell.relDateLabel.text = "Released \(formattedDate)"
+            
             
             cell.aboutAlbumLabel.text = unwrappedAlbum.albumDescription
             
