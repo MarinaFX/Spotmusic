@@ -8,13 +8,14 @@
 import Foundation
 import UIKit
 
-class FavoritesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoritesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SongFromAlbumDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
     var musicService: MusicService? = try? MusicService()
+    
     
     var albums: [MusicCollection] = []
     
@@ -27,23 +28,14 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         
         albums = musicService?.loadLibrary() ?? []
         
-//Mock Data
-//        let albumArray = albums[0].musics[1]
-//        let albumArray2 = albums[0].musics[2]
-//        musicService?.toggleFavorite(music: albumArray, isFavorite: true)
-//        musicService?.toggleFavorite(music: albumArray2, isFavorite: true)
-//        let albumArray3 = albums[0].musics[3]
-//        let albumArray4 = albums[0].musics[4]
-//        let albumArray5 = albums[0].musics[5]
-//        musicService?.toggleFavorite(music: albumArray3, isFavorite: true)
-//        musicService?.toggleFavorite(music: albumArray4, isFavorite: true)
-//        musicService?.toggleFavorite(music: albumArray5, isFavorite: true)
-        
-        
         tableView.dataSource = self
         tableView.delegate = self
-
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
  
@@ -66,7 +58,7 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let favMusics = musicService?.favoriteMusics[indexPath.row]
+        guard let favMusics = musicService?.favoriteMusics[indexPath.row] else { fatalError() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "favorites-songs", for: indexPath) as! FavoritesListCell
         
         
@@ -75,9 +67,9 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         cell.contentView.superview?.tag = indexPath.section
         cell.accessoryView = plusButton
         
-        cell.coverImage.image = musicService?.getCoverImage(forItemIded: favMusics?.id ?? "")
-        cell.titleLabel.text = favMusics?.title
-        cell.artistLabel.text = favMusics?.artist
+        cell.coverImage.image = musicService?.getCoverImage(forItemIded: favMusics.id)
+        cell.titleLabel.text = favMusics.title
+        cell.artistLabel.text = favMusics.artist
         
         
         return cell
@@ -88,8 +80,11 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         let row = button.tag
         let sec = button.superview?.tag
 
+        
         if let excludeFav = musicService?.favoriteMusics[row] {
-            musicService?.toggleFavorite(music: excludeFav, isFavorite: false)
+            if !favoriteSong(song: excludeFav){
+                tableView.reloadData()
+            }
         }
         
         //quando pegar 1 musica e exclui, favorites[] fica com 1 musica soh, ent row 1 n existe mais, tem q ser 0.
@@ -103,10 +98,26 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         // mas n eh mais maroon 5: 1 eh maroon 5 :0 agr
         
         
-        tableView.reloadData()
+        
         print("button row: \(row ),, section: \(sec ?? 0)")
 
     }
+    
+    func isFavoriteSong(song: Music) -> Bool {
+        return musicService?.favoriteMusics.contains(song) ?? false
+    }
+    
+    func favoriteSong(song: Music) -> Bool {
+        if isFavoriteSong(song: song) {
+            musicService?.toggleFavorite(music: song, isFavorite: false)
+            return false
+        }
+        else {
+            musicService?.toggleFavorite(music: song, isFavorite: true)
+            return true
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected \(indexPath)")

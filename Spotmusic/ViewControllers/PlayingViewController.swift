@@ -7,7 +7,11 @@
 
 import UIKit
 
-class PlayingViewController: UIViewController {
+class PlayingViewController: UIViewController, SongFromAlbumDelegate {
+    func favoriteSong(song: Music) -> Bool {
+        return false
+    }
+    
     
     var musicService: MusicService? = try? MusicService()
  
@@ -19,7 +23,7 @@ class PlayingViewController: UIViewController {
     
     @IBOutlet weak var likedImage: UIImageView!
     
-    
+    var delegate: SongFromAlbumDelegate?
     var playingNow: Music?
     
     override func viewDidLoad() {
@@ -43,8 +47,15 @@ class PlayingViewController: UIViewController {
     }
     @objc func tappedMe()
     {
-        print("Tapped on Image")
-        likedImage.image = UIImage(systemName: "heart")
+        guard let isFavorite = delegate?.favoriteSong(song: playingNow!) else { return }
+        
+        if isFavorite {
+            likedImage.image = UIImage(systemName: "heart.fill")
+            likedImage.tintColor = UIColor.red
+        }
+        else {
+            likedImage.image = UIImage(systemName: "heart")
+        }
     }
     
     @objc func addTapped(){
