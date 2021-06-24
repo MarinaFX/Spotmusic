@@ -35,16 +35,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y0k-Ns-z5x">
-                                                    <rect key="frame" x="78" y="26" width="93.5" height="35.5"/>
+                                                    <rect key="frame" x="78" y="26" width="285" height="35.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faded Heart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw1-jr-YGD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="93.5" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Faded Heart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw1-jr-YGD">
+                                                            <rect key="frame" x="0.0" y="0.0" width="285" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Weekend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73T-qY-HBC">
-                                                            <rect key="frame" x="0.0" y="19.5" width="93.5" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="The Weekend" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73T-qY-HBC">
+                                                            <rect key="frame" x="0.0" y="19.5" width="285" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -57,6 +57,7 @@
                                                 <constraint firstItem="f75-y1-uTU" firstAttribute="leading" secondItem="f4m-qh-VpJ" secondAttribute="leading" constant="16" id="T5U-2V-Hnw"/>
                                                 <constraint firstItem="f75-y1-uTU" firstAttribute="top" secondItem="f4m-qh-VpJ" secondAttribute="top" constant="16" id="YUJ-kF-QFm"/>
                                                 <constraint firstItem="y0k-Ns-z5x" firstAttribute="leading" secondItem="f75-y1-uTU" secondAttribute="trailing" constant="12" id="apc-uB-twb"/>
+                                                <constraint firstAttribute="trailing" secondItem="y0k-Ns-z5x" secondAttribute="trailing" constant="12" id="nCG-fl-gGG"/>
                                                 <constraint firstAttribute="bottom" secondItem="f75-y1-uTU" secondAttribute="bottom" constant="6" id="x6f-MF-sEV"/>
                                             </constraints>
                                         </tableViewCellContentView>

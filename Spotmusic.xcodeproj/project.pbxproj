@@ -18,6 +18,7 @@
 		1BDAF28F267D13BE00B8D16E /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF28D267D13BD00B8D16E /* data.json */; };
 		B21B714D2683B9D900E6BF8C /* QueueList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21B714C2683B9D800E6BF8C /* QueueList.storyboard */; };
 		B21B714F2683B9EC00E6BF8C /* QueueListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */; };
+		B21B71512683F82000E6BF8C /* QueueListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21B71502683F82000E6BF8C /* QueueListCell.swift */; };
 		B2DF6FF3267D299E00ADAEA5 /* Playing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */; };
 		B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */; };
 		B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */; };
@@ -39,6 +40,7 @@
 		1BDAF28D267D13BD00B8D16E /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		B21B714C2683B9D800E6BF8C /* QueueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QueueList.storyboard; sourceTree = "<group>"; };
 		B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueListViewController.swift; sourceTree = "<group>"; };
+		B21B71502683F82000E6BF8C /* QueueListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueListCell.swift; sourceTree = "<group>"; };
 		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playing.storyboard; sourceTree = "<group>"; };
 		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */,
 				B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */,
 				B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */,
+				B21B71502683F82000E6BF8C /* QueueListCell.swift */,
 				B21B714C2683B9D800E6BF8C /* QueueList.storyboard */,
 				B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */,
 			);
@@ -176,6 +179,7 @@
 				B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */,
 				1BDAF27A267D038300B8D16E /* ViewController.swift in Sources */,
 				1BDAF276267D038300B8D16E /* AppDelegate.swift in Sources */,
+				B21B71512683F82000E6BF8C /* QueueListCell.swift in Sources */,
 				B2DF6FFB2682592F00ADAEA5 /* MusicSerivce.swift in Sources */,
 				B2DF6FF92681262800ADAEA5 /* FavoritesListCell.swift in Sources */,
 				B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */,
