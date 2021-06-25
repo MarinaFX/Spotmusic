@@ -46,6 +46,4 @@ class SongFromAlbumCell: UITableViewCell {
 }
 
 
-protocol SongFromAlbumDelegate {
-    func favoriteSong(song: Music) -> Bool;
-}
+
