@@ -40,13 +40,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="DEP-L5-8P2">
                                                     <rect key="frame" x="91" y="22" width="275.5" height="33.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AlbumName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-90-YEe">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlbumName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-90-YEe">
                                                             <rect key="frame" x="0.0" y="0.0" width="275.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AlbumType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q79-jI-Uzl" userLabel="AlbumType">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlbumType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q79-jI-Uzl" userLabel="AlbumType">
                                                             <rect key="frame" x="0.0" y="19" width="275.5" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -100,8 +100,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-HF-9Jh">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="e0m-HF-9Jh">
+                                <rect key="frame" x="0.0" y="140" width="414" height="613"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlbumPresentation" rowHeight="160" id="7T6-cd-Q4u" customClass="AlbumPresentationCell" customModule="Spotmusic" customModuleProvider="target">
@@ -185,13 +185,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="URh-ew-z6n">
                                                     <rect key="frame" x="78" y="13.5" width="281" height="35.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SongName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-kP-R7T">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SongName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-kP-R7T">
                                                             <rect key="frame" x="0.0" y="0.0" width="281" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isy-Yf-ccY">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="249" ambiguous="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isy-Yf-ccY">
                                                             <rect key="frame" x="0.0" y="19.5" width="281" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -235,14 +235,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxW-aq-aMd" customClass="MiniPlayerView" customModule="Spotmusic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="753" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Of1-rK-cUq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MKZ-vk-SRM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="nxW-aq-aMd" firstAttribute="leading" secondItem="MKZ-vk-SRM" secondAttribute="leading" id="15N-vL-pq3"/>
                             <constraint firstItem="e0m-HF-9Jh" firstAttribute="trailing" secondItem="MKZ-vk-SRM" secondAttribute="trailing" id="1ca-ww-xxw"/>
                             <constraint firstItem="e0m-HF-9Jh" firstAttribute="top" secondItem="MKZ-vk-SRM" secondAttribute="top" id="Ffu-WA-fHc"/>
-                            <constraint firstItem="e0m-HF-9Jh" firstAttribute="bottom" secondItem="MKZ-vk-SRM" secondAttribute="bottom" id="hGD-cl-5ZA"/>
+                            <constraint firstItem="nxW-aq-aMd" firstAttribute="bottom" secondItem="MKZ-vk-SRM" secondAttribute="bottom" id="Gy7-ph-Xf8"/>
+                            <constraint firstItem="nxW-aq-aMd" firstAttribute="top" secondItem="e0m-HF-9Jh" secondAttribute="bottom" id="Y7G-fB-PhU"/>
                             <constraint firstItem="e0m-HF-9Jh" firstAttribute="leading" secondItem="MKZ-vk-SRM" secondAttribute="leading" id="qwg-Vi-c7k"/>
+                            <constraint firstItem="nxW-aq-aMd" firstAttribute="trailing" secondItem="MKZ-vk-SRM" secondAttribute="trailing" id="wJG-OU-X9d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Album Songs" id="7o9-Bl-zwJ">
@@ -253,13 +263,23 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="miniPlayerView" destination="nxW-aq-aMd" id="bgs-oz-j1i"/>
                         <outlet property="tableView" destination="e0m-HF-9Jh" id="tGZ-Rk-Ycs"/>
                         <segue destination="AaJ-ni-opr" kind="presentation" identifier="toAlbumDetails" id="cTl-mE-tRp"/>
+                        <segue destination="FQ3-rM-eFQ" kind="presentation" identifier="toPlayingMusic" id="JoU-vt-v9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcQ-c7-ERs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199" y="-6"/>
+            <point key="canvasLocation" x="2198.5507246376815" y="-6.0267857142857144"/>
+        </scene>
+        <!--Playing-->
+        <scene sceneID="gbK-86-p6o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Playing" id="FQ3-rM-eFQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydC-Hz-jeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2999" y="200"/>
         </scene>
         <!--About-->
         <scene sceneID="3cH-nd-zlR">
@@ -413,7 +433,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpB-f2-Zaf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3957.971014492754" y="-6.0267857142857144"/>
+            <point key="canvasLocation" x="3961" y="-303"/>
         </scene>
         <!--Library-->
         <scene sceneID="rDb-4t-ijT">
@@ -423,7 +443,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Qmf-7A-OMS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -451,7 +471,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsp-ut-u1D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3047.826086956522" y="-6.0267857142857144"/>
+            <point key="canvasLocation" x="3041" y="-303"/>
         </scene>
     </scenes>
     <resources>
