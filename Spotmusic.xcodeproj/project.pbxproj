@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4508DD268535D4000960D2 /* MiniPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B4508DC268535D4000960D2 /* MiniPlayerView.xib */; };
+		1B4508E126853636000960D2 /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4508E026853636000960D2 /* MiniPlayerView.swift */; };
 		1BDAF27D267D038300B8D16E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF27B267D038300B8D16E /* Main.storyboard */; };
 		1BDAF27F267D038600B8D16E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF27E267D038600B8D16E /* Assets.xcassets */; };
 		1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B4508DC268535D4000960D2 /* MiniPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiniPlayerView.xib; sourceTree = "<group>"; };
+		1B4508E026853636000960D2 /* MiniPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		1BDAF272267D038300B8D16E /* Spotmusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotmusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BDAF275267D038300B8D16E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BDAF277267D038300B8D16E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B4508DB268535B8000960D2 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				1B4508DC268535D4000960D2 /* MiniPlayerView.xib */,
+				1B4508E026853636000960D2 /* MiniPlayerView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		1BDAF269267D038300B8D16E = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +105,7 @@
 		1BDAF274267D038300B8D16E /* Spotmusic */ = {
 			isa = PBXGroup;
 			children = (
+				1B4508DB268535B8000960D2 /* CustomView */,
 				1BDAF2A0268245A600B8D16E /* Model */,
 				1BDAF29F2682458600B8D16E /* Storyboards */,
 				1BDAF275267D038300B8D16E /* AppDelegate.swift */,
@@ -102,8 +116,6 @@
 				1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */,
 				1BDAF283267D038600B8D16E /* Info.plist */,
 				1BDAF28D267D13BD00B8D16E /* data.json */,
-				B2DF6FFA2682592F00ADAEA5 /* MusicSerivce.swift */,
-				1BDAF28B267D0E2000B8D16E /* FavoritesTab.storyboard */,
 				B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */,
 				B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */,
 				B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */,
@@ -218,6 +230,7 @@
 				1BDAF2A82683E61200B8D16E /* FavoritesTab.storyboard in Resources */,
 				1BDAF282267D038600B8D16E /* LaunchScreen.storyboard in Resources */,
 				B21B714D2683B9D900E6BF8C /* QueueList.storyboard in Resources */,
+				1B4508DD268535D4000960D2 /* MiniPlayerView.xib in Resources */,
 				1BDAF27F267D038600B8D16E /* Assets.xcassets in Resources */,
 				1BDAF27D267D038300B8D16E /* Main.storyboard in Resources */,
 			);
@@ -242,13 +255,11 @@
 				1BDAF298267D5BFA00B8D16E /* AlbumSongsUIViewController.swift in Sources */,
 				1BDAF290267D13BE00B8D16E /* MusicService.swift in Sources */,
 				1BDAF296267D538700B8D16E /* AlbumWithImageCell.swift in Sources */,
+				1B4508E126853636000960D2 /* MiniPlayerView.swift in Sources */,
 				B21B714F2683B9EC00E6BF8C /* QueueListViewController.swift in Sources */,
 				B2DF6FF5267D387400ADAEA5 /* FavoritesListViewController.swift in Sources */,
-				1BDAF27A267D038300B8D16E /* ViewController.swift in Sources */,
-				1BDAF276267D038300B8D16E /* AppDelegate.swift in Sources */,
 				B2DF6FF92681262800ADAEA5 /* FavoritesListCell.swift in Sources */,
 				B2DF6FF726811F4800ADAEA5 /* PlayingViewController.swift in Sources */,
-				1BDAF278267D038300B8D16E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

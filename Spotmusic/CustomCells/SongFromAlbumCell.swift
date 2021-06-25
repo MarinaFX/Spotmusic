@@ -39,7 +39,7 @@ class SongFromAlbumCell: UITableViewCell {
         }
         else {
             isFavoriteLabel.image = UIImage(systemName: "heart")
-            isFavoriteLabel.tintColor = UIColor.gray
+            isFavoriteLabel.tintColor = UIColor.red
         }
     }
 

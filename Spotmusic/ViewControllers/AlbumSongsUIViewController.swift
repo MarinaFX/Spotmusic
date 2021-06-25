@@ -7,24 +7,41 @@
 
 import UIKit
 
-/** Cell IDs
+/**
+ Cell IDs
  1st Cell:  AlbumPresentation
  2nd Cell: insideAlbumSongsCell
  */
 
 class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SongFromAlbumDelegate {
+    
     //MARK: Variables and class setup
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var miniPlayerView: MiniPlayerView!
     
     var musicService: MusicService?
     var album: MusicCollection?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsMultipleSelectionDuringEditing = false
+        //tableView.register(UINib(nibName: "MiniPlayerView", bundle: nil), forCellReuseIdentifier: "MiniPlayerView")
+        
         self.navigationItem.title = album?.title ?? "Album name"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        tableView.reloadData()
+    }
+    
+    func loadData(){
+        guard let unwrappedAlbum = album else { return }
+        let updatedAlbum = musicService?.getCollection(id: unwrappedAlbum.id)
+        self.album = updatedAlbum
     }
     
     //MARK: Outlet actions
@@ -67,7 +84,7 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "insideAlbumSongsCell", for: indexPath) as! SongFromAlbumCell
             
-           
+            
             let song = unwrappedAlbum.musics[indexPath.row - 1]
             
             cell.imageCover.image = musicService?.getCoverImage(forItemIded: song.id)
@@ -82,32 +99,70 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             }
             else {
                 cell.isFavoriteLabel.image = UIImage(systemName: "heart")
-                cell.isFavoriteLabel.tintColor = UIColor.gray
+                cell.isFavoriteLabel.tintColor = UIColor.red
             }
             return cell
         }
     }
     
-    func isFavoriteSong(song: Music) -> Bool {
-        return musicService?.favoriteMusics.contains(song) ?? false
+    //MARK: TableView Delegate
+    
+    //verificar pq n esta deletando no music service
+    //ao deletar e ir para tab dos favoritos e voltar para mesma tela, musica ainda permanece
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete && album!.supportsEdition == true {
+            album?.musics.remove(at: indexPath.row - 1)
+            musicService?.removeMusic(album!.musics[indexPath.row - 1], from: album!)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if !(indexPath.row == 0) {
+            return indexPath
+        }
+        
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let unwrappedAlbum = album else { return }
+        
+        miniPlayerView.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.musics[indexPath.row - 1].id)
+        miniPlayerView.songNameLabel.text = unwrappedAlbum.musics[indexPath.row - 1].title
+        miniPlayerView.artistNameLabel.text = unwrappedAlbum.musics[indexPath.row - 1].artist
+        
+//        miniPlayerView.imageCover.image = musicService?.getCoverImage(forItemIded: musicService?.queue.nowPlaying?.id ?? "")
+//        miniPlayerView.songNameLabel.text = musicService?.queue.nowPlaying?.artist
+//        miniPlayerView.artistNameLabel.text = musicService?.queue.nowPlaying?.title
+        
+        performSegue(withIdentifier: "toPlayingMusic", sender: indexPath)
     }
     
     //MARK: Segues
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performar segue para playing futuramente
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAlbumDetails" {
             let rootDest = segue.destination as! UINavigationController
-            
             let finalDest = rootDest.topViewController as! AlbumDetailsViewController
             
             finalDest.album = self.album
             finalDest.musicService = musicService
-            
         }
+        else {
+            if segue.identifier == "toPlayingMusic", let unwrappedIndexPath = sender as? IndexPath {
+                let rootDest = segue.destination as! UINavigationController
+                let finalDest = rootDest.topViewController as! PlayingViewController
+                finalDest.playingNow = album?.musics[unwrappedIndexPath.row - 1]
+            }
+        }
+    }
+    
+    //MARK: Heart selection function
+    
+    func isFavoriteSong(song: Music) -> Bool {
+        return musicService?.favoriteMusics.contains(song) ?? false
     }
     
     //MARK: Favorite Protocol

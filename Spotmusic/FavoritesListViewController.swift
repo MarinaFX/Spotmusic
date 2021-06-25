@@ -19,31 +19,24 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Favorites"
         navigationItem.searchController = searchController
         searchController.searchBar.setImage(UIImage(systemName: "mic.fill"), for: .bookmark, state: .normal)
         searchController.searchBar.showsBookmarkButton = true
         
         albums = musicService?.loadLibrary() ?? []
-        
-//Mock Data
-//        let albumArray = albums[0].musics[1]
-//        let albumArray2 = albums[0].musics[2]
-//        print(albumArray)
-//        musicService?.toggleFavorite(music: albumArray, isFavorite: true)
-//        musicService?.toggleFavorite(music: albumArray2, isFavorite: true)
-        
+    
         tableView.dataSource = self
         tableView.delegate = self
 
-        
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-       
         return musicService?.favoriteMusics.count ?? 0
     }
     
