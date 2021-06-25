@@ -1,27 +1,17 @@
 //
-//  MiniPlayerView.swift
+//  MiniPlaylist.swift
 //  Spotmusic
 //
-//  Created by Marina De Pazzi on 24/06/21.
+//  Created by Marina De Pazzi on 25/06/21.
 //
 
 import UIKit
 
-class MiniPlayerView: UIView {
+class MiniPlaylist: UIView {
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageCover: UIImageView!
-    @IBOutlet weak var songNameLabel: UILabel!
-    @IBOutlet weak var artistNameLabel: UILabel!
-    @IBOutlet weak var reprodButton: UIButton!
-    
-    var playMusic: Bool = true
-    
-    @IBAction func playMusic(_ sender: UIButton) {
-        playMusic.toggle()
-        
-        reprodButton.setImage(playMusic ? UIImage(systemName: "pause.circle.fill") : UIImage(systemName: "play.circle.fill"), for: .normal)
-    }
+    @IBOutlet weak var playlistNameLabel: UILabel!
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -34,7 +24,7 @@ class MiniPlayerView: UIView {
     }
     
     func commonInit(){
-        let nib = UINib(nibName: "MiniPlayerView", bundle: .main)
+        let nib = UINib(nibName: "MiniPlaylist", bundle: .main)
         let contentView = nib.instantiate(withOwner: self, options: nil).first as! UIView
         
         addSubview(contentView)

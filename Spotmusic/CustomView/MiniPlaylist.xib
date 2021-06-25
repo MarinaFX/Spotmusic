@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiniPlaylist" customModule="Spotmusic" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="vS5-t0-PwF"/>
+                <outlet property="imageCover" destination="JPe-0x-5gK" id="MqW-PS-tg1"/>
+                <outlet property="playlistNameLabel" destination="vHA-rk-8kG" id="cmr-7W-SQI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="20TYNq9o5sdBAbkCWE9ih7" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-0x-5gK">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="9KC-wK-4aM"/>
+                        <constraint firstAttribute="width" constant="50" id="lzE-u1-JxW"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cringeeee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHA-rk-8kG">
+                    <rect key="frame" x="56" y="14" width="95" height="22"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.76863789559999995" green="0.76860874889999997" blue="0.76862853769999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="JPe-0x-5gK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Rp-E3-HIC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vHA-rk-8kG" secondAttribute="bottom" constant="14" id="4RY-ZD-A1u"/>
+                <constraint firstItem="JPe-0x-5gK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4v5-on-LDI"/>
+                <constraint firstItem="vHA-rk-8kG" firstAttribute="leading" secondItem="JPe-0x-5gK" secondAttribute="trailing" constant="6" id="EDY-oV-OkT"/>
+                <constraint firstAttribute="trailing" secondItem="vHA-rk-8kG" secondAttribute="trailing" constant="16" id="G0x-xw-yn9"/>
+                <constraint firstItem="JPe-0x-5gK" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NWg-FP-ZBk"/>
+                <constraint firstItem="JPe-0x-5gK" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="czH-Fj-aU4"/>
+                <constraint firstItem="vHA-rk-8kG" firstAttribute="leading" secondItem="JPe-0x-5gK" secondAttribute="trailing" constant="6" id="fjL-Iu-bZW"/>
+                <constraint firstItem="vHA-rk-8kG" firstAttribute="centerY" secondItem="JPe-0x-5gK" secondAttribute="centerY" id="gdc-oM-wWq"/>
+                <constraint firstItem="vHA-rk-8kG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="j2d-1d-San"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="57.24637681159421" y="-170.75892857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="20TYNq9o5sdBAbkCWE9ih7" width="640" height="640"/>
+    </resources>
+</document>

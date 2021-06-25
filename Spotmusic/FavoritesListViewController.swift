@@ -20,6 +20,7 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         
         self.title = "Favorites"
+        
         navigationItem.searchController = searchController
         searchController.searchBar.setImage(UIImage(systemName: "mic.fill"), for: .bookmark, state: .normal)
         searchController.searchBar.showsBookmarkButton = true

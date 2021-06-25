@@ -16,6 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="gqa-JU-Y4z" kind="relationship" relationship="viewControllers" id="Vde-AZ-1ul"/>
                         <segue destination="mio-ec-pED" kind="relationship" relationship="viewControllers" id="i0y-Zc-nNf"/>
                         <segue destination="QNl-SW-1n2" kind="relationship" relationship="viewControllers" id="a4G-DO-hK7"/>
                     </connections>
@@ -24,25 +25,40 @@
             </objects>
             <point key="canvasLocation" x="-169" y="242"/>
         </scene>
+        <!--Discover-->
+        <scene sceneID="iT9-JR-hky">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" id="gqa-JU-Y4z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="magnifyingglass" catalog="system" id="dc3-Yv-GES"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="150-Df-QCU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="44"/>
+        </scene>
         <!--LibraryTab-->
         <scene sceneID="21d-LX-MW8">
             <objects>
                 <viewControllerPlaceholder storyboardName="LibraryTab" id="mio-ec-pED" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Qzb-r0-e57"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="book.closed.fill" catalog="system" id="Qzb-r0-e57"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQF-Xc-eR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="50"/>
+            <point key="canvasLocation" x="840" y="242"/>
         </scene>
         <!--FavoritesTab-->
         <scene sceneID="Hm7-MJ-XMr">
             <objects>
                 <viewControllerPlaceholder storyboardName="FavoritesTab" id="QNl-SW-1n2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="P2i-fR-85c"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart.fill" catalog="system" id="P2i-fR-85c"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hji-Wz-zXL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="893" y="436"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
 </document>

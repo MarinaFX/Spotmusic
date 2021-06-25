@@ -1,3 +1,9 @@
+//
+//  MusicService.swift
+//  Delegated
+//
+//  Created by Hojin Ryu on 16/06/21.
+//
 
 import Foundation
 import UIKit
@@ -59,6 +65,7 @@ struct Queue {
 // MARK: - MusicService
 
 final class MusicService {
+    private let allMusics: [Music]
     private var collections: Set<MusicCollection>
 
     /// The queue with the music being played and the next musics.
@@ -132,13 +139,10 @@ final class MusicService {
     ///   - isFavorite: Whether the music is favorited or not.
     func toggleFavorite(music: Music, isFavorite: Bool) {
         if isFavorite {
-            favoriteMusics.removeAll { $0 == music }
-        } else {
             favoriteMusics.append(music)
+        } else {
+            favoriteMusics.removeAll { $0 == music }
         }
-        
-        // update persisted list with IDs of favorite musics
-        UserDefaults.standard.setValue(favoriteMusics.map(\.id), forKey: "favorite-musics-ids")
     }
 
     // MARK: Playing/Queue
@@ -163,6 +167,5 @@ final class MusicService {
         queue.nextSuggested.removeAll { $0 == music }
     }
 }
-
 
 
