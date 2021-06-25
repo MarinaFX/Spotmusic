@@ -42,17 +42,16 @@ class AlbumDetailsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     //MARK: Outlet actions
-    
     @IBAction func dismissAction(_ sender: Any) {
         self.navigationController?.dismiss(animated: true)
     }
     
-    //MARK: DataSource delegation
-    
+    // MARK: TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
+    // MARK: TableView DataSource - Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "about-album", for: indexPath) as! AboutAlbumTableViewCell
@@ -69,14 +68,12 @@ class AlbumDetailsViewController: UIViewController, UITableViewDataSource, UITab
             formattedDate.insert(",", at: i)
             formattedDate.insert("h", at: i)
             formattedDate.insert("t", at: i)
-
             
             cell.imageCover.image = musicService?.getCoverImage(forItemIded: unwrappedAlbum.id)
             cell.albumNameLabel.text = unwrappedAlbum.title
             cell.albumArtistLabel.text = "\(unwrappedAlbum.type) by \(unwrappedAlbum.mainPerson)"
             cell.countAndDurationLabel.text = "\(unwrappedAlbum.musics.count) songs, \(albumMin)min \(albumSec)s"
             cell.relDateLabel.text = "Released \(formattedDate)"
-            
             
             cell.aboutAlbumLabel.text = unwrappedAlbum.albumDescription
             

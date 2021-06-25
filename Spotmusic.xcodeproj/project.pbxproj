@@ -90,7 +90,7 @@
 		B21B7152268511E900E6BF8C /* SongFromAlbumDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFromAlbumDelegate.swift; sourceTree = "<group>"; };
 		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Playing.storyboard; path = ../Playing.storyboard; sourceTree = "<group>"; };
 		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesListViewController.swift; path = ../FavoritesListViewController.swift; sourceTree = "<group>"; };
-		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayingViewController.swift; path = ../PlayingViewController.swift; sourceTree = "<group>"; };
 		B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesListCell.swift; path = ../FavoritesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +171,6 @@
 				1BDAF280267D038600B8D16E /* LaunchScreen.storyboard */,
 				1BDAF283267D038600B8D16E /* Info.plist */,
 				1BDAF28D267D13BD00B8D16E /* data.json */,
-				B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */,
 			);
 			path = Spotmusic;
 			sourceTree = "<group>";
@@ -198,6 +197,7 @@
 				B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */,
 				1BDAF2A1268260B300B8D16E /* AlbumDetailsViewController.swift */,
 				1B6A34E72685C7D500BFA057 /* DiscoverViewController.swift */,
+				B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

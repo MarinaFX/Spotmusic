@@ -101,13 +101,23 @@
                     <navigationItem key="navigationItem" title="Playing" id="PoP-Kl-mIM"/>
                     <connections>
                         <outlet property="artistLabel" destination="vNV-xu-0X5" id="fWA-3P-ziY"/>
+                        <outlet property="likedImage" destination="hns-lW-8Zb" id="SMK-2y-pIv"/>
                         <outlet property="playingCoverImage" destination="cNG-Nd-jvt" id="HYr-Ic-vLp"/>
                         <outlet property="titleLabel" destination="ZtH-aT-d3r" id="MrG-Lg-OH0"/>
+                        <segue destination="fS9-bI-WvT" kind="presentation" identifier="toQueueList" id="YC9-OE-0dK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2T4-8I-udx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2802.898550724638" y="120.53571428571428"/>
+        </scene>
+        <!--QueueList-->
+        <scene sceneID="L79-tp-CnP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QueueList" id="fS9-bI-WvT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2M5-fM-BZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3832" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VCn-s1-uTf">
