@@ -27,6 +27,15 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationItem.title = album?.title ?? "Album name"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+        tableView.reloadData()
+    }
+    func loadData(){
+            guard let album = album else{return}
+            let updatedAlbum = musicService?.getCollection(id: album.id)
+            self.album = updatedAlbum
+    }
     //MARK: Outlet actions
     
     @IBAction func infoButtonAction(_ sender: Any) {

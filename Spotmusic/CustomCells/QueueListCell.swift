@@ -1,20 +1,19 @@
 //
-//  FavoritesListCell.swift
+//  QueueListCell.swift
 //  Spotmusic
 //
-//  Created by Hojin Ryu on 21/06/21.
+//  Created by Hojin Ryu on 23/06/21.
 //
 
 import UIKit
 
-class FavoritesListCell: UITableViewCell {
+class QueueListCell: UITableViewCell {
 
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var isFavoriteImage: UIImageView!
     
-           
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

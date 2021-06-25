@@ -8,13 +8,16 @@
 import Foundation
 import UIKit
 
-class FavoritesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoritesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SongFromAlbumDelegate {
     
-    let searchController = UISearchController(searchResultsController: nil)
+    
     @IBOutlet weak var tableView: UITableView!
     
-    private var musicService: MusicService? = try? MusicService()
-    private var albums: [MusicCollection] = []
+    let searchController = UISearchController(searchResultsController: nil)
+    var musicService: MusicService? = try? MusicService()
+    
+    
+    var albums: [MusicCollection] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,52 +28,48 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         
         albums = musicService?.loadLibrary() ?? []
         
-//Mock Data
-//        let albumArray = albums[0].musics[1]
-//        let albumArray2 = albums[0].musics[2]
-//        print(albumArray)
-//        musicService?.toggleFavorite(music: albumArray, isFavorite: true)
-//        musicService?.toggleFavorite(music: albumArray2, isFavorite: true)
-        
         tableView.dataSource = self
         tableView.delegate = self
-
         
         
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-       
         return musicService?.favoriteMusics.count ?? 0
+    }
+    
+    func likeButton() -> UIButton{
+        let favButton = UIButton(type: .system)
+        favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        favButton.contentMode = .scaleAspectFit
+        favButton.sizeToFit()
+        favButton.addTarget(self, action: #selector(self.whenTapped), for: .touchUpInside)
+        favButton.tintColor = UIColor.red
+        
+        return favButton
     }
     
     // MARK: Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let plusButton = UIButton(type: .system)
-        plusButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        plusButton.contentMode = .scaleAspectFit
-        plusButton.sizeToFit()
-        plusButton.addTarget(self, action: #selector(self.whenTapped), for: .touchUpInside)
-        plusButton.tintColor = UIColor.red
-        plusButton.tag = indexPath.row
-        
-        
-        
-        let favMusics = musicService?.favoriteMusics[indexPath.row]
-        
+        guard let favMusics = musicService?.favoriteMusics[indexPath.row] else { fatalError() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "favorites-songs", for: indexPath) as! FavoritesListCell
         
-        cell.contentView.superview?.tag = indexPath.section
-        cell.coverImage.image = musicService?.getCoverImage(forItemIded: favMusics?.id ?? "")
-        cell.titleLabel.text = favMusics?.title
-        cell.artistLabel.text = favMusics?.artist
-//        cell.isFavoriteImage.image = UIImage(systemName: "heart.fill")
         
+        let plusButton = likeButton()
+        plusButton.tag = indexPath.row
+        cell.contentView.superview?.tag = indexPath.section
         cell.accessoryView = plusButton
+        
+        cell.coverImage.image = musicService?.getCoverImage(forItemIded: favMusics.id)
+        cell.titleLabel.text = favMusics.title
+        cell.artistLabel.text = favMusics.artist
         
         
         return cell
@@ -81,9 +80,12 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         let row = button.tag
         let sec = button.superview?.tag
 
-//        if let excludeFav = musicService?.favoriteMusics[row] {
-//            musicService?.toggleFavorite(music: excludeFav, isFavorite: false)
-//        }
+        
+        if let excludeFav = musicService?.favoriteMusics[row] {
+            if !favoriteSong(song: excludeFav){
+                tableView.reloadData()
+            }
+        }
         
         //quando pegar 1 musica e exclui, favorites[] fica com 1 musica soh, ent row 1 n existe mais, tem q ser 0.
         
@@ -96,10 +98,26 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         // mas n eh mais maroon 5: 1 eh maroon 5 :0 agr
         
         
-
+        
         print("button row: \(row ),, section: \(sec ?? 0)")
 
     }
+    
+    func isFavoriteSong(song: Music) -> Bool {
+        return musicService?.favoriteMusics.contains(song) ?? false
+    }
+    
+    func favoriteSong(song: Music) -> Bool {
+        if isFavoriteSong(song: song) {
+            musicService?.toggleFavorite(music: song, isFavorite: false)
+            return false
+        }
+        else {
+            musicService?.toggleFavorite(music: song, isFavorite: true)
+            return true
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected \(indexPath)")

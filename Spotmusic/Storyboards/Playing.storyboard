@@ -13,17 +13,17 @@
             <objects>
                 <viewController storyboardIdentifier="PlayingView" id="gRM-A8-Jhd" customClass="PlayingViewController" customModule="Spotmusic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ERE-pe-8Bn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="07f3fdeaaf7c7c55c061" translatesAutoresizingMaskIntoConstraints="NO" id="cNG-Nd-jvt">
-                                <rect key="frame" x="20" y="155" width="374" height="374"/>
+                                <rect key="frame" x="20" y="67" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cNG-Nd-jvt" secondAttribute="height" multiplier="1:1" id="tWs-NY-stG"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hns-lW-8Zb">
-                                <rect key="frame" x="364" y="613" width="30" height="26.5"/>
+                                <rect key="frame" x="364" y="525" width="30" height="26.5"/>
                                 <color key="tintColor" red="0.91903227570000001" green="0.3036657572" blue="0.2391726673" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="PXn-XC-ZO8"/>
@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rlS-Vs-4hF">
-                                <rect key="frame" x="20" y="595" width="334" height="62"/>
+                                <rect key="frame" x="20" y="507" width="334" height="62"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtH-aT-d3r">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="33.5"/>
@@ -48,7 +48,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="755" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fi3-ma-Gfn">
-                                <rect key="frame" x="20" y="678" width="374" height="58"/>
+                                <rect key="frame" x="20" y="590" width="374" height="58"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wdQ-lZ-adb">
                                         <rect key="frame" x="-2" y="0.0" width="378" height="40"/>
@@ -74,7 +74,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="controls" translatesAutoresizingMaskIntoConstraints="NO" id="JcM-QD-MT1">
-                                <rect key="frame" x="61" y="746" width="292" height="86"/>
+                                <rect key="frame" x="61" y="658" width="292" height="86"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mWK-UD-PYa"/>
@@ -101,25 +101,39 @@
                     <navigationItem key="navigationItem" title="Playing" id="PoP-Kl-mIM"/>
                     <connections>
                         <outlet property="artistLabel" destination="vNV-xu-0X5" id="fWA-3P-ziY"/>
+                        <outlet property="likedImage" destination="hns-lW-8Zb" id="Fyf-fH-WMl"/>
                         <outlet property="playingCoverImage" destination="cNG-Nd-jvt" id="HYr-Ic-vLp"/>
                         <outlet property="titleLabel" destination="ZtH-aT-d3r" id="MrG-Lg-OH0"/>
+                        <segue destination="xBM-D3-sFL" kind="presentation" identifier="toQueueList" id="JJy-Kk-7ff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2T4-8I-udx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2802.898550724638" y="120.53571428571428"/>
         </scene>
+        <!--QueueList-->
+        <scene sceneID="ir0-ZI-PEo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QueueList" id="xBM-D3-sFL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAx-d6-AHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3612" y="121"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VCn-s1-uTf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="66R-Pz-Rbd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KAt-xT-WEK">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="KAt-xT-WEK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YoD-wt-JnZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="gRM-A8-Jhd" kind="relationship" relationship="rootViewController" id="eZp-BS-7bv"/>
                     </connections>
