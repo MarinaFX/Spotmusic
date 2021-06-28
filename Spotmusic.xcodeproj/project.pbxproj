@@ -90,7 +90,7 @@
 		B21B7152268511E900E6BF8C /* SongFromAlbumDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFromAlbumDelegate.swift; sourceTree = "<group>"; };
 		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playing.storyboard; sourceTree = "<group>"; };
 		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
-		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayingViewController.swift; path = ../PlayingViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
