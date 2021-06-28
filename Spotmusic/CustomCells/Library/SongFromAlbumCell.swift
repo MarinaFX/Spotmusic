@@ -23,12 +23,6 @@ class SongFromAlbumCell: UITableViewCell {
         isFavoriteLabel.addGestureRecognizer(tapGesture)
         isFavoriteLabel.isUserInteractionEnabled = true
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     @objc func toggleFavorite(){
         guard let isFavorite = delegate?.favoriteSong(song: song!) else { return }
@@ -39,7 +33,7 @@ class SongFromAlbumCell: UITableViewCell {
         }
         else {
             isFavoriteLabel.image = UIImage(systemName: "heart")
-            isFavoriteLabel.tintColor = UIColor.red
+            isFavoriteLabel.tintColor = UIColor.black
         }
     }
 

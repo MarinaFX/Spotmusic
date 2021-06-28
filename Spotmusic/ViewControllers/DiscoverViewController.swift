@@ -14,13 +14,14 @@ import UIKit
  3rd : recommendedForYou
  4th : listenAgain
  
- headers:
+ Headers:
  1st : headerWithImage
  2nd: forYouHeader
  */
 
 class DiscoverViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    //MARK: Variables and class setup
     @IBOutlet weak var tableView: UITableView!
     
     var musicService: MusicService? = try? MusicService()
@@ -31,14 +32,15 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
         
         albumPlaylistCollection = musicService?.loadLibrary() ?? []
         
-//        tableView.rowHeight = UITableView.automaticDimension
-//        tableView.estimatedRowHeight = 300
+//      tableView.rowHeight = UITableView.automaticDimension
+//      tableView.estimatedRowHeight = 300
         
         tableView.delegate = self
         tableView.dataSource = self
 
     }
     
+    // MARK: TableView DataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -47,12 +49,13 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
         return 2
     }
     
+    //MARK: TableView DataSource - Header Configuration
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let cell = tableView.dequeueReusableCell(withIdentifier: "headerWithImage") as! HeaderWithImageCell
 
         return cell.bounds.height
     }
-    
+    //trabalhar com array de enums ao inves de ifs hard coded
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "headerWithImage") as! HeaderWithImageCell
@@ -77,6 +80,7 @@ class DiscoverViewController: UIViewController, UITableViewDelegate, UITableView
         return UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     }
     
+    // MARK: TableView DataSource - Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "discoverMyPlaylists", for: indexPath) as! DiscoverPlaylistsCell

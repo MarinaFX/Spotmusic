@@ -81,7 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Queue" id="C1Y-jt-1cL"/>
                     <connections>
-                        <outlet property="queueTableView" destination="9mU-sE-TQD" id="qHB-7r-8JD"/>
+                        <outlet property="tableView" destination="9mU-sE-TQD" id="nFK-Km-DmN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

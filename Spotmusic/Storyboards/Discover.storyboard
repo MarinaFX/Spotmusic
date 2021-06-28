@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="200" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KGT-RQ-gjn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="discoverMyPlaylists" rowHeight="139" id="cyU-Kr-MZr" customClass="DiscoverPlaylistsCell" customModule="Spotmusic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49.5" width="414" height="139"/>
@@ -97,7 +96,7 @@
                                                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="343" id="6GP-B3-RIL"/>
-                                                        <constraint firstAttribute="height" constant="84" id="ocT-yS-Qqe"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="84" id="ocT-yS-Qqe"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -119,25 +118,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bB4-un-Hiu" userLabel="Recommended2" customClass="RecentlyReleasedView" customModule="Spotmusic" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="104" width="343" height="84"/>
+                                                    <rect key="frame" x="16" y="104" width="382" height="84"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="343" id="UES-7M-WY0"/>
-                                                        <constraint firstAttribute="height" constant="84" id="Xow-0n-4yr"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="84" id="Xow-0n-4yr"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6z-J7-bus" userLabel="Recommended1" customClass="RecentlyReleasedView" customModule="Spotmusic" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="12" width="382" height="84"/>
                                                     <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="84" id="99M-gL-QSh"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="84" id="99M-gL-QSh"/>
                                                         <constraint firstAttribute="width" constant="343" id="IFG-Dx-S9p"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bB4-un-Hiu" firstAttribute="top" secondItem="C6z-J7-bus" secondAttribute="bottom" constant="8" id="A1r-Ud-PQ9"/>
-                                                <constraint firstAttribute="trailing" secondItem="bB4-un-Hiu" secondAttribute="trailing" constant="15" id="JpO-go-yl5"/>
+                                                <constraint firstAttribute="trailing" secondItem="bB4-un-Hiu" secondAttribute="trailing" constant="16" id="JpO-go-yl5"/>
                                                 <constraint firstItem="C6z-J7-bus" firstAttribute="leading" secondItem="HQw-80-NUG" secondAttribute="leading" constant="16" id="Kbf-hp-io0"/>
                                                 <constraint firstAttribute="bottom" secondItem="bB4-un-Hiu" secondAttribute="bottom" constant="8" id="rXI-TY-oNv"/>
                                                 <constraint firstAttribute="trailing" secondItem="C6z-J7-bus" secondAttribute="trailing" constant="16" id="tm5-wa-yXl"/>
@@ -159,14 +158,14 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02CLnOe5IdSZKKS1oxWeRZ" translatesAutoresizingMaskIntoConstraints="NO" id="Xka-K6-iRM" userLabel="Album1">
                                                     <rect key="frame" x="16" y="16" width="167" height="167"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="167" id="I0y-FE-1Ix"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="167" id="I0y-FE-1Ix"/>
                                                         <constraint firstAttribute="width" constant="167" id="Yij-ra-Sw4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02CLnOe5IdSZKKS1oxWeRZ" translatesAutoresizingMaskIntoConstraints="NO" id="0gz-dk-gaU" userLabel="Album2">
                                                     <rect key="frame" x="231" y="16" width="167" height="167"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="167" id="QaP-G7-Yxg"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="167" id="QaP-G7-Yxg"/>
                                                         <constraint firstAttribute="width" constant="167" id="kqf-Z1-A6i"/>
                                                     </constraints>
                                                 </imageView>
@@ -216,19 +215,22 @@
                                                     <rect key="frame" x="16" y="24" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="SiX-LV-6ob"/>
-                                                        <constraint firstAttribute="height" constant="44" id="bwl-iJ-z5H"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="44" id="bwl-iJ-z5H"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-5A-eis">
                                                     <rect key="frame" x="68" y="27" width="310" height="38"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Recently Released" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsP-Qz-MN0">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently Released" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsP-Qz-MN0">
                                                             <rect key="frame" x="0.0" y="0.0" width="310" height="13.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="13.5" id="3mJ-0q-v1J"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLY-lb-Xzg">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLY-lb-Xzg">
                                                             <rect key="frame" x="0.0" y="17.5" width="310" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                             <nil key="textColor"/>
@@ -246,7 +248,7 @@
                                                 <constraint firstItem="TMX-5A-eis" firstAttribute="centerY" secondItem="Csl-tK-NPC" secondAttribute="centerY" id="q1s-Sz-U2b"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="artistNameLabel" destination="yLY-lb-Xzg" id="XDW-Ze-BlM"/>
                                             <outlet property="imageCover" destination="Csl-tK-NPC" id="7Ij-zq-Yfg"/>
@@ -285,7 +287,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Tf9-g9-QJ5" secondAttribute="bottom" constant="24" id="xOE-GE-xPO"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
                                             <outlet property="automaticPlaylistsLabel" destination="c7D-I1-IDM" id="u5B-6v-wdR"/>
                                             <outlet property="forYouLabel" destination="94t-fM-DMF" id="I1A-5Z-Lv6"/>
@@ -320,7 +322,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="8YA-3E-KuK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -337,9 +339,6 @@
         <image name="02CLnOe5IdSZKKS1oxWeRZ" width="640" height="640"/>
         <image name="0UaMYEvWZi0ZqiDOoHU3YI" width="640" height="640"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <namedColor name="AccentColor">
-            <color red="0.20399999618530273" green="0.77999997138977051" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

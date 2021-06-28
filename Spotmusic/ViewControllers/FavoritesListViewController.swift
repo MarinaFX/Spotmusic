@@ -10,7 +10,7 @@ import UIKit
 
 class FavoritesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SongFromAlbumDelegate {
     
-    
+    //MARK: Variables and class setup
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -38,11 +38,6 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
-    
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return musicService?.favoriteMusics.count ?? 0

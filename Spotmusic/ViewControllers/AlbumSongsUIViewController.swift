@@ -28,7 +28,6 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsMultipleSelectionDuringEditing = false
-        //tableView.register(UINib(nibName: "MiniPlayerView", bundle: nil), forCellReuseIdentifier: "MiniPlayerView")
         
         self.navigationItem.title = album?.title ?? "Album name"
     }
@@ -43,18 +42,17 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             self.album = updatedAlbum
     }
     //MARK: Outlet actions
-    
     @IBAction func infoButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "toAlbumDetails", sender: nil)
     }
     
-    //MARK: DataSource delegation
-    
+    // MARK: TableView DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let unwrappedAlbum = album else { return 0 }
         return unwrappedAlbum.musics.count + 1
     }
     
+    // MARK: TableView DataSource - Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let unwrappedAlbum = album else
         { fatalError() }
@@ -97,7 +95,7 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
             }
             else {
                 cell.isFavoriteLabel.image = UIImage(systemName: "heart")
-                cell.isFavoriteLabel.tintColor = UIColor.red
+                cell.isFavoriteLabel.tintColor = UIColor.black
             }
             return cell
         }
@@ -107,6 +105,8 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
     
     //verificar pq n esta deletando no music service
     //ao deletar e ir para tab dos favoritos e voltar para mesma tela, musica ainda permanece
+    
+    //MARK: TableView Delegate - Cell Editing
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete && album!.supportsEdition == true {
             album?.musics.remove(at: indexPath.row - 1)
@@ -115,6 +115,7 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    //MARK: TableView Delegate - Cell Selection
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         if !(indexPath.row == 0) {
             return indexPath
@@ -131,15 +132,10 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         miniPlayerView.songNameLabel.text = unwrappedAlbum.musics[indexPath.row - 1].title
         miniPlayerView.artistNameLabel.text = unwrappedAlbum.musics[indexPath.row - 1].artist
         
-//        miniPlayerView.imageCover.image = musicService?.getCoverImage(forItemIded: musicService?.queue.nowPlaying?.id ?? "")
-//        miniPlayerView.songNameLabel.text = musicService?.queue.nowPlaying?.artist
-//        miniPlayerView.artistNameLabel.text = musicService?.queue.nowPlaying?.title
-        
         performSegue(withIdentifier: "toPlayingMusic", sender: indexPath)
     }
     
     //MARK: Segues
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAlbumDetails" {
             let rootDest = segue.destination as! UINavigationController
@@ -158,13 +154,11 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     //MARK: Heart selection function
-    
     func isFavoriteSong(song: Music) -> Bool {
         return musicService?.favoriteMusics.contains(song) ?? false
     }
     
     //MARK: Favorite Protocol
-    
     func favoriteSong(song: Music) -> Bool {
         if isFavoriteSong(song: song) {
             musicService?.toggleFavorite(music: song, isFavorite: false)
