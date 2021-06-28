@@ -84,14 +84,14 @@
 		1BFCD75E2685EE6500339047 /* ListenAgainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenAgainCell.swift; sourceTree = "<group>"; };
 		1BFCD7612685F74700339047 /* HeaderWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithImageCell.swift; sourceTree = "<group>"; };
 		1BFCD7632685FFCE00339047 /* ForYouHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouHeaderCell.swift; sourceTree = "<group>"; };
-		B21B714C2683B9D800E6BF8C /* QueueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = QueueList.storyboard; path = ../QueueList.storyboard; sourceTree = "<group>"; };
-		B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QueueListViewController.swift; path = ../QueueListViewController.swift; sourceTree = "<group>"; };
+		B21B714C2683B9D800E6BF8C /* QueueList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QueueList.storyboard; sourceTree = "<group>"; };
+		B21B714E2683B9EC00E6BF8C /* QueueListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueListViewController.swift; sourceTree = "<group>"; };
 		B21B71502683F82000E6BF8C /* QueueListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueListCell.swift; sourceTree = "<group>"; };
 		B21B7152268511E900E6BF8C /* SongFromAlbumDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongFromAlbumDelegate.swift; sourceTree = "<group>"; };
-		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Playing.storyboard; path = ../Playing.storyboard; sourceTree = "<group>"; };
-		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesListViewController.swift; path = ../FavoritesListViewController.swift; sourceTree = "<group>"; };
+		B2DF6FF2267D299E00ADAEA5 /* Playing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Playing.storyboard; sourceTree = "<group>"; };
+		B2DF6FF4267D387400ADAEA5 /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		B2DF6FF626811F4800ADAEA5 /* PlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayingViewController.swift; path = ../PlayingViewController.swift; sourceTree = "<group>"; };
-		B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesListCell.swift; path = ../FavoritesListCell.swift; sourceTree = "<group>"; };
+		B2DF6FF82681262800ADAEA5 /* FavoritesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +317,7 @@
 				1BDAF2AB2683E9F400B8D16E /* ViewController.swift in Sources */,
 				1BDAF292267D247500B8D16E /* LibraryListViewController.swift in Sources */,
 				1BDAF2A62683CFA100B8D16E /* AboutArtistViewCell.swift in Sources */,
+				B21B7153268511E900E6BF8C /* SongFromAlbumDelegate.swift in Sources */,
 				1BFCD7622685F74700339047 /* HeaderWithImageCell.swift in Sources */,
 				1BFCD7592685E8C700339047 /* RecommendedForYouCell.swift in Sources */,
 				B21B7153268511E900E6BF8C /* SongFromAlbumDelegate.swift in Sources */,

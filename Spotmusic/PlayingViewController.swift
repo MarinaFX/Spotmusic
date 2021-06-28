@@ -61,13 +61,14 @@ class PlayingViewController: UIViewController, SongFromAlbumDelegate {
         return false
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toQueueList", let music = sender as? Music {
-//            let destination = segue.destination as! QueueListViewController
-//
-//            destination.nowPlaying = music
-//
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toQueueList", let music = sender as? Music {
+            let dest1 = segue.destination as! UINavigationController
+            let finalDest = dest1.topViewController as! QueueListViewController
+
+            finalDest.nowPlayingMusic = music
+
+        }
+    }
 }
 

@@ -10,7 +10,7 @@ import UIKit
 
 class FavoritesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SongFromAlbumDelegate {
     
-    
+    //MARK: Variables and class setup
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -23,6 +23,7 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         
         self.title = "Favorites"
+        
         navigationItem.searchController = searchController
         searchController.searchBar.setImage(UIImage(systemName: "mic.fill"), for: .bookmark, state: .normal)
         searchController.searchBar.showsBookmarkButton = true
@@ -31,17 +32,14 @@ class FavoritesListViewController: UIViewController, UITableViewDataSource, UITa
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
-    
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return musicService?.favoriteMusics.count ?? 0
     }
     

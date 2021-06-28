@@ -36,13 +36,11 @@ class AlbumSongsUIViewController: UIViewController, UITableViewDataSource, UITab
         loadData()
         tableView.reloadData()
     }
-    
     func loadData(){
-        guard let unwrappedAlbum = album else { return }
-        let updatedAlbum = musicService?.getCollection(id: unwrappedAlbum.id)
-        self.album = updatedAlbum
+            guard let album = album else{return}
+            let updatedAlbum = musicService?.getCollection(id: album.id)
+            self.album = updatedAlbum
     }
-    
     //MARK: Outlet actions
     @IBAction func infoButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "toAlbumDetails", sender: nil)
